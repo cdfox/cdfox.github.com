@@ -1,0 +1,12 @@
+p {
+	margin: 0;
+	font-size: 12pt;
+}
+
+p#controls {
+	margin-bottom: 1em;
+}
+
+p.doc {
+	font-family: sans-serif;
+}

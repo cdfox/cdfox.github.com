@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Gibbs JS</title>
+	<link href="gibbs.css" rel="stylesheet" type="text/css" />
+	<script defer type="text/ecmascript" src="jquery-1.5.js"></script>
+	<script defer type="text/ecmascript" src="corpus.js"></script>
+	<script defer type="text/ecmascript" src="compressed_data_string.js"></script>
+	<script defer type="text/ecmascript" src="LZW.js"></script>
+	<script defer type="text/ecmascript" src="gibbs.js"></script>
+</head>
+<body>
+	<h1>Gibbs JS</h1> 
+	<!-- <fieldset>
+		<label for="alpha">Alpha:</label><input id="alpha"></input>
+		<label for="beta">Beta:</label><input id="beta"></input>
+		<label for="num_topics">Number of Topics:</label><input id="num_topics"></input>
+	</fieldset> -->
+	<p id="controls"> Hit any key or the Start Animation button to (re)start the animation. It may take a few seconds for the data to load. <br>
+		<button id="start">Start</button> 
+		<button id="pause">Pause</button>
+		<button id="zoom">Zoom</button>
+		Iteration: <span id="iteration">0</span>
+	</p>
+	<div id="docs"></div>
+</body>
+</html>

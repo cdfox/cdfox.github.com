@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Canvas Mines</title>
+		<link href="canvas_mines.css" type="text/css" rel="stylesheet" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js" type="text/javascript"></script>
+		<script src="canvas_mines.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<h1>Canvas Mines</h1>
+		<fieldset>
+			<button id="easy" class="difficulty">Easy</button>
+			<button id="medium" class="difficulty">Medium</button>
+			<button id="hard" class="difficulty">Hard</button> <br />
+			<label>rows: <input id="rows" type="text" size="4" maxlength="3" value="9" /></label> <br />
+			<label>columns: <input id="columns" type="text" size="4" maxlength="3" value="9" /></label> <br />
+			<label>number of mines: <input id="mines" type="text" size="4" maxlength="4" value="10" /></label> <br />
+			<button id="new_game">New Game</button>
+		</fieldset>
+        <p>
+            Alt+click to place a flag.<span id="flag_info"></span>
+        </p>
+		<canvas id="canvas" width="225" height="225">No HTML 5 Canvas support in this browser.</canvas>		 
+	</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+	max-width: 800px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 28pt;
+}
+
+h2 {
+	font-size: 14pt;
+}
+
+img {
+	float: left;
+	border: thin solid black;
+	margin-right: 1em;
+}
+
+p#list-header {
+	margin-bottom: 0;
+}
+
+ul {
+	margin-top: 0;
+}
