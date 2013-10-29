@@ -18,7 +18,7 @@ function initialize() {
   }
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   var colorKey = new google.maps.InfoWindow({
-    content:  '<strong>Number of routes containing this path:</strong> <br />' + 
+    content:  '<strong>Number of overlapping routes:</strong> <br />' + 
               '<span style="background-color:red;color:red">...</span> 1 <br />' +
               '<span style="background-color:blue;color:blue">...</span> 2 <br />' +
               '<span style="background-color:green;color:green">...</span> 3 <br />' +
@@ -28,6 +28,7 @@ function initialize() {
   });
   colorKey.open(map);
   document.getElementById("go").onclick = calcRoute;
+  calcRoute();
 }
 
 function calcRoute() {
@@ -84,7 +85,7 @@ function drawRoute() {
       map: map, 
       path: path,
       strokeColor: colors[count - 1],
-      strokeOpacity: 0.1 + Math.min(0.7, 0.2 * count)
+      strokeOpacity: 0.2 + Math.min(0.7, 0.2 * count)
     });
     var marker = new google.maps.Marker({
       position: end,
