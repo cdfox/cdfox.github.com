@@ -1,0 +1,113 @@
+%-----------------------------------------
+% URL: http://github.com/mdwrigh2/resume
+% This document is covered under the Creative Commons Attribution 3.0 Unported License
+%-----------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt,letterpaper,final]{moderncv}
+\usepackage{fontspec}
+\moderncvtheme[darkred]{classic}
+
+% DOCUMENT LAYOUT
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{2cm}
+\AtBeginDocument{\recomputelengths}
+% FONTS
+\usepackage[utf8]{inputenc}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+
+% Remove % to set to different fonts
+%\setromanfont [Ligatures={Common},Numbers={OldStyle}]{Adobe Caslon Pro}
+%\setmonofont[Scale=0.8]{Monaco} 
+
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
+
+% ---- MARGIN YEARS
+%\newcommand{\years}[1]{\marginpar{\scriptsize #1}}
+
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+
+
+% Personal Information 
+\firstname{Chris}
+\familyname{Fox}
+\mobile{(360) 609-5854}
+\email{chrisdavidfox@gmail.com}
+\homepage{cdfox.github.io}
+
+\title{}
+
+\nopagenumbers{}
+
+\begin{document}
+
+\maketitle
+
+\section{Education}
+  \cventry{2016 {\footnotesize (expected)}}{PhD Computer Science}{North Carolina State University}{Raleigh, NC}{}{%GPA: 3.5
+  Research Focus: Modeling User Knowledge in a Tutorial Dialogue System
+  }
+  \cventry{2012}{MS Computer Science}{North Carolina State University}{Raleigh, NC}{}{%GPA: 3.5
+  }
+  \cventry{2009}{BS Mathematics,  BS Economics}{University of Washington}{Seattle, WA}{}{%GPA: 3.4
+  }
+
+\section{Skills}
+  \cvline{}{Python, Java, C++, Javascript/HTML/CSS, Android, iOS, Matlab, R }
+
+\section{Experience} 
+  \cventry{May 2014 -- Aug 2014}{Software Engineering Intern}{Google}{New York, NY}{}{
+    \begin{itemize}
+      \item Prototyped an improvement to a tool for Adwords customers.
+      \item  Forecasting, distributed data-processing pipelines, web-based visualization, C++
+    \end{itemize}
+  }
+  \cventry{Aug 2013 -- May 2014}{Teaching Assistant}{North Carolina State University}{Raleigh, NC}{}{
+    \begin{itemize}
+      \item Spoken Dialogue Systems
+      \item Graph Theory
+    \end{itemize}
+  }
+  \cventry{May 2013 -- Aug 2013}{Software Engineering Intern}{Apple}{Cupertino, CA}{}{
+    \begin{itemize}
+      \item Researched, implemented, and tested a new load balancing scheme for the Game Center backend.
+      \item Built a web-based visualization to show estimated improvement under the new system.
+      \item Hadoop, HBase
+    \end{itemize}
+  }
+  \cventry{Jan 2012 -- May 2013}{Research Assistant}{North Carolina State University}{Raleigh, NC}{}{
+    \begin{itemize}
+      \item Modified Latent Dirichlet Allocation, a probabilistic model of latent thematic structure in a text corpus, to learn topics that change with time but have stable core.
+      \item Used Gibbs sampling to fit a model to the corpus of 32K news articles gathered using the Twitter API.
+      \item Separately, mentored an undergraduate on a project to build a speech-based physics tutor on Android.
+    \end{itemize}
+  }
+\cventry{Sept 2009 -- June 2010}{Research Assistant}{University of Washington}{Seattle, WA}{}{
+    \begin{itemize}
+      \item Built an HTML Canvas-based player to display dynamically generated animations of flow cytometry data.
+      \item Used Python to produce a KML visualization in Goolge Earth from flow cytometry data.    \end{itemize}
+  }
+\section{Selected Graduate Coursework}
+  \cvline{}{   \vspace{-5mm}
+   \begin{itemize}
+   \item Machine Learning
+   \item Spoken Dialogue Systems
+   \item Probabilistic Graphical Models
+   \item Automated Learning and Data Analysis
+   \end{itemize}
+   \vspace{-5mm}
+  }
+\section{Projects}
+  \cvline{}{   \vspace{-5mm}
+   \begin{itemize}
+   \item \textbf{Route Tracing Study.} Used cross-validated lasso regression to find dialogue features predictive of better learning in a set of route teaching dialogues.
+   \item \textbf{SouffleTutor.} Built voice-controlled guide on iOS for making a souffle. 
+   \end{itemize}
+   \vspace{-5mm}
+  }
+\end{document}
