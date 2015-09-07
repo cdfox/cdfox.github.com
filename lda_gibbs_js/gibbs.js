@@ -1,8 +1,5 @@
 var spans = [];
-var num_topics = 2;
-var alpha = 0.2;
-var beta = 0.2;
-var paused = false;
+var running = false;
 var zoomed = false;
 
 var colors = ['green', 'orange'];
@@ -14,47 +11,53 @@ var data = JSON.parse(data_string);
 /*
 Display docs and set up spans and state.
 */
-timer_id = 0;
-i = 0;
-$(function(){
+var timer_id = 0;
+var iteration = 0;
+var timer_id;
+$(function() {
 	corpus.forEach(function(doc, i){
 		var p = $('<p class="doc"><strong>' + i + ': </strong></p>');
 		var doc_spans = [];
 		doc.forEach(function(word, j){
-			var span = $('<span class="word"></span>').text(word + " ").appendTo(p);
+			var span = $('<span class="word"></span>').text(word + " ");
+			span.appendTo(p);
 			doc_spans.push(span);
 		});
 		p.appendTo('#docs');
 		spans.push(doc_spans);
 	});
-	//gibbs(100, 1, 20, reviews, num_topics, alpha, beta);
-	$("body").keypress(start);
+	update_colors(data[0]);
 	$("#start").click(start);
+	$("#reset").click(reset);
 	$("#zoom").click(zoom);
 });
 
-function start(){
-	if (!paused) {
-		i = 0;
-	} else {
-		paused = false;
+function start() {
+	if (!running) {
+		timer_id = setInterval(function (argument) {
+			update_colors(data[iteration]);
+			$("#iteration").text(iteration);
+			iteration++;
+			if (iteration == data.length) {
+				clearInterval(timer_id);
+			}
+		}, 200);
+		running = true;
 	}
+}
+
+function reset() {
+	iteration = 0;
 	clearInterval(timer_id);
-	var timer_id = setInterval(function (argument) {
-		update_colors(data[i]);
-		$("#iteration").text(i);
-		i++;
-	}, 200);
-	$("#pause").click(function(){
-		clearInterval(timer_id);
-		paused = true;
-	});
+	running = false;
+	update_colors(data[0]);
+	$("#iteration").text(iteration);
 }
 
 /*
 Update color of each word to reflect state.
 */
-function update_colors(state){
+function update_colors(state) {
 	spans.forEach(function(doc_spans, i){
 		doc_spans.forEach(function(word_span, j){
 			if (zoomed) {
@@ -77,5 +80,5 @@ function zoom() {
 		words.css('background-color', 'white');
 		docs.css('font-size', '12pt');
 	}
-
+	update_colors(data[iteration]);
 }
