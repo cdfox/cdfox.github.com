@@ -96,7 +96,7 @@ function Board(canvas, rows, columns, mines) {
 
 		var square = board.squares[row][column];
 		if (!square.revealed) {
-			if (event.altKey) {
+			if (event.shiftKey) {
 				square.flag = !square.flag;
 			} else {
 				if (square.mine) {
